@@ -36,7 +36,6 @@ export default function Home() {
     validate: {
       targetUrl: (val) => {
         try {
-          console.log(handleUserUrlInput(val));
           new URL(handleUserUrlInput(val));
           return null;
         } catch {

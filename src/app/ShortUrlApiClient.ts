@@ -28,7 +28,6 @@ export class ShortUrlApiClient {
 
   static async shortenUrl(targetUrl: string): Promise<ShortUrl> {
     const apiUrl = `${ShortUrlApiClient.API_URL_BASE}/api/url`;
-    console.log(apiUrl);
 
     const response = await fetch(apiUrl, {
       method: 'POST',
