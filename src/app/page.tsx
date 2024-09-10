@@ -99,7 +99,7 @@ export default function Home() {
                   readOnly
                   label="Shortened URL"
                   value={getShortUrl(shortenedUrl.hashed_url)}
-                  rightSection={CopyShortUrlButton(shortenedUrl.short_url)}
+                  rightSection={CopyShortUrlButton(getShortUrl(shortenedUrl.hashed_url))}
                 />
                 <TextInput readOnly label="Original URL page title" value={shortenedUrl.title} />
               </Stack>
