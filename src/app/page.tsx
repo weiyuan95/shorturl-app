@@ -19,13 +19,13 @@ import {
 } from '@mantine/core';
 import { useState } from 'react';
 import { handleUserUrlInput } from '@/app/urls';
-import { ShortenUrlResponse, ShortUrlApiClient } from '@/app/ShortUrlApiClient';
+import { ShortUrl, ShortUrlApiClient } from '@/app/ShortUrlApiClient';
 import { IconCheck, IconCopy } from '@tabler/icons-react';
 import { notifications } from '@mantine/notifications';
 
 export default function Home() {
   const [shortenAnother, setShortenAnother] = useState(false);
-  const [shortenedUrl, setShortenedUrl] = useState<ShortenUrlResponse | null>(null);
+  const [shortenedUrl, setShortenedUrl] = useState<ShortUrl | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm({
@@ -98,7 +98,7 @@ export default function Home() {
                 <TextInput
                   readOnly
                   label="Shortened URL"
-                  value={shortenedUrl.short_url}
+                  value={getShortUrl(shortenedUrl.hashed_url)}
                   rightSection={CopyShortUrlButton(shortenedUrl.short_url)}
                 />
                 <TextInput readOnly label="Original URL page title" value={shortenedUrl.title} />
@@ -121,6 +121,11 @@ export default function Home() {
       </Paper>
     </Container>
   );
+}
+
+function getShortUrl(hash: string) {
+  const URL_BASE = process.env.NODE_ENV == 'development' ? 'http://localhost:3001' : 'https://url.weiyuan.dev';
+  return `${URL_BASE}/${hash}`;
 }
 
 function CopyShortUrlButton(shortUrl: string) {
