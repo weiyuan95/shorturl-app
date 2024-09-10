@@ -4,6 +4,7 @@ import '@mantine/notifications/styles.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import React from 'react';
 import { Notifications } from '@mantine/notifications';
+import ShortenUrlAppShell from '@/app/ShortenUrlAppShell';
 
 export const metadata: Metadata = {
   title: 'ShortURL',
@@ -24,7 +25,7 @@ export default function RootLayout({
       <body>
         <MantineProvider>
           <Notifications position="top-right" limit={3} autoClose={5000} />
-          {children}
+          <ShortenUrlAppShell>{children}</ShortenUrlAppShell>
         </MantineProvider>
       </body>
     </html>
