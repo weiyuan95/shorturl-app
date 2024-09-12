@@ -17,6 +17,10 @@ const cspHeader = `
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   swcMinify: true,
+  compiler: {
+    // Remove console logs only in production
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
   async headers() {
     return [
       {
@@ -33,6 +37,10 @@ const nextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'no-referrer',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
           },
         ],
       },
