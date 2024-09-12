@@ -16,6 +16,7 @@ const cspHeader = `
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  swcMinify: true,
   async headers() {
     return [
       {
@@ -24,6 +25,14 @@ const nextConfig = {
           {
             key: 'Content-Security-Policy',
             value: cspHeader.replace(/\n/g, ''),
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'no-referrer',
           },
         ],
       },
