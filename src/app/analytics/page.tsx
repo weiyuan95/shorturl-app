@@ -1,5 +1,5 @@
-import { ShortUrlApiClient } from '@/app/ShortUrlApiClient';
 import AnalyticsTables from '@/app/analytics/AnalyticsTables';
+import { ShortUrlApiClient } from '@/app/ShortUrlApiClient';
 
 export default async function Page() {
   const [rawAnalyticsData, clickAnalyticsData] = await Promise.all([

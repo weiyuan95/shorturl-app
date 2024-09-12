@@ -1,4 +1,5 @@
 import { notFound, redirect } from 'next/navigation';
+
 import { ShortUrlApiClient } from '@/app/ShortUrlApiClient';
 
 export default async function Page({ params }: { params: { slug: string } }) {

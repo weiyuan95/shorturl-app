@@ -1,6 +1,5 @@
 'use client';
 
-import { useForm } from '@mantine/form';
 import {
   ActionIcon,
   Box,
@@ -17,11 +16,13 @@ import {
   TextInput,
   Tooltip,
 } from '@mantine/core';
-import { useState } from 'react';
-import { handleUserUrlInput } from '@/app/urls';
-import { ShortUrl, ShortUrlApiClient } from '@/app/ShortUrlApiClient';
-import { IconCheck, IconCopy } from '@tabler/icons-react';
+import { useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
+import { IconCheck, IconCopy } from '@tabler/icons-react';
+import { useState } from 'react';
+
+import { ShortUrl, ShortUrlApiClient } from '@/app/ShortUrlApiClient';
+import { handleUserUrlInput } from '@/app/urls';
 
 export default function Home() {
   const [shortenAnother, setShortenAnother] = useState(false);

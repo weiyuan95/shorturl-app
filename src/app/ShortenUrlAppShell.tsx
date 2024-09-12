@@ -1,10 +1,11 @@
 'use client';
 
+import { AppShell, Burger, Group, Title, UnstyledButton } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { AppShell, Burger, Group, UnstyledButton, Title } from '@mantine/core';
-import classes from './shell.module.css';
-import React, { ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
+import React, { ReactNode } from 'react';
+
+import classes from './shell.module.css';
 
 export default function ShortenUrlAppShell({ children }: Readonly<{ children: ReactNode }>) {
   const [opened, { toggle }] = useDisclosure();

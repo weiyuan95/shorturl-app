@@ -1,13 +1,16 @@
 ## Getting Started
+
 All required dependencies are specified in the `package.json` file. This project was developed with `pnpm`.
 
 ### Installing dependencies
+
 ```bash
-corepack enable 
+corepack enable
 pnpm i
 ```
 
 ### Running the app
+
 ```bash
 pnpm dev
 ```

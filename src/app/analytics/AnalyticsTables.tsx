@@ -1,10 +1,11 @@
 'use client';
 
 import { Button, Flex, Grid } from '@mantine/core';
+import { useRouter } from 'next/navigation';
+
+import ClicksTable from '@/app/analytics/ClicksTable';
 import RawDataTable from '@/app/analytics/RawDataTable';
 import { ClickAnalyticsData, RawAnalyticsData } from '@/app/ShortUrlApiClient';
-import ClicksTable from '@/app/analytics/ClicksTable';
-import { useRouter } from 'next/navigation';
 
 interface Props {
   data: RawAnalyticsData[];
