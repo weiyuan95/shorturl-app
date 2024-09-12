@@ -1,7 +1,8 @@
 'use client';
 
-import { RawAnalyticsData } from '@/app/ShortUrlApiClient';
 import { Table } from '@mantine/core';
+
+import { RawAnalyticsData } from '@/app/ShortUrlApiClient';
 
 interface Props {
   data: RawAnalyticsData[];

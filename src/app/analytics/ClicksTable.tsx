@@ -1,7 +1,8 @@
 'use client';
 
-import { ClickAnalyticsData } from '@/app/ShortUrlApiClient';
 import { Table } from '@mantine/core';
+
+import { ClickAnalyticsData } from '@/app/ShortUrlApiClient';
 
 interface Props {
   clicks: ClickAnalyticsData;
