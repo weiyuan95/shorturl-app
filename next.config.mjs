@@ -2,7 +2,7 @@ const isDevEnv = process.env.NODE_ENV === 'development';
 
 const cspHeader = `
     default-src 'self';
-    script-src 'self' 'unsafe-inline' ${isDevEnv ? "'unsafe-eval'" : "'url.weiyuan.dev'"};
+    script-src 'self' 'unsafe-inline' ${isDevEnv ? 'unsafe-eval' : 'url.weiyuan.dev'};
     style-src 'self' 'unsafe-inline';
     img-src 'self';
     font-src 'self';
